@@ -28,6 +28,7 @@ defmodule Recurly.BillingInfoTest do
     routing_number
     state
     token_id
+    updated_at
     vat_number
     verification_value
     year

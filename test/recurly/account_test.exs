@@ -16,6 +16,11 @@ defmodule Recurly.AccountTest do
     email
     entity_use_code
     first_name
+    has_active_subscription
+    has_canceled_subscription
+    has_future_subscription
+    has_live_subscription
+    has_past_due_invoice
     hosted_login_token
     invoices
     last_name
@@ -38,6 +43,11 @@ defmodule Recurly.AccountTest do
     email
     entity_use_code
     first_name
+    has_active_subscription
+    has_canceled_subscription
+    has_future_subscription
+    has_live_subscription
+    has_past_due_invoice
     last_name
     tax_exempt
     username

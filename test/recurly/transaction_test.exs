@@ -7,10 +7,16 @@ defmodule Recurly.TransactionTest do
     account
     action
     amount_in_cents
+    approval_code
+    collected_at
     currency
+    description
     details
+    gateway_type
     invoice
     ip_address
+    message
+    origin
     original_transaction
     payment_method
     recurring_type
@@ -28,8 +34,13 @@ defmodule Recurly.TransactionTest do
   @writeable_fields ~w(
     action
     amount_in_cents
+    approval_code
     currency
+    description
+    gateway_type
     ip_address
+    message
+    origin
     payment_method
     recurring_type
     reference

@@ -6,6 +6,7 @@ defmodule Recurly.InvoiceTest do
   @readable_fields ~w(
     account
     address
+    attempt_next_collection_at
     closed_at
     collection_method
     created_at
@@ -16,7 +17,9 @@ defmodule Recurly.InvoiceTest do
     line_items
     net_terms
     po_number
+    recovery_reason
     state
+    subtotal_after_discount_in_cents
     subtotal_in_cents
     tax_in_cents
     tax_rate
@@ -41,7 +44,9 @@ defmodule Recurly.InvoiceTest do
     line_items
     net_terms
     po_number
+    recovery_reason
     state
+    subtotal_after_discount_in_cents
     subtotal_in_cents
     tax_in_cents
     tax_rate

@@ -6,15 +6,16 @@ defmodule Recurly.SubscriptionTest do
   @readable_fields ~w(
     account
     activated_at
-    canceled_at
-    currency
-    current_period_started_at
-    expires_at
     bank_account_authorized_at
     bulk
-    coupon_code
+    canceled_at
     collection_method
+    converted_at
+    coupon_code
+    currency
+    current_period_started_at
     customer_notes
+    expires_at
     first_renewal_date
     invoice
     net_terms
@@ -22,9 +23,11 @@ defmodule Recurly.SubscriptionTest do
     plan_code
     po_number
     quantity
+    revenue_schedule_type
+    started_with_gift
+    starts_at
     state
     subscription_add_ons
-    starts_at
     tax_in_cents
     tax_rate
     tax_region
@@ -36,17 +39,16 @@ defmodule Recurly.SubscriptionTest do
     updated_at
     uuid
     vat_reverse_charge_notes
-    revenue_schedule_type
   )a
 
   @writeable_fields ~w(
     account
-    currency
-    current_period_started_at
     bank_account_authorized_at
     bulk
-    coupon_code
     collection_method
+    coupon_code
+    currency
+    current_period_started_at
     customer_notes
     first_renewal_date
     net_terms
@@ -54,8 +56,10 @@ defmodule Recurly.SubscriptionTest do
     plan_code
     po_number
     quantity
-    subscription_add_ons
+    revenue_schedule_type
+    started_with_gift
     starts_at
+    subscription_add_ons
     tax_in_cents
     tax_rate
     tax_region
@@ -66,7 +70,6 @@ defmodule Recurly.SubscriptionTest do
     unit_amount_in_cents
     uuid
     vat_reverse_charge_notes
-    revenue_schedule_type
   )a
 
   test "should maintain the list of writeable fields" do

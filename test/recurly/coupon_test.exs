@@ -15,6 +15,7 @@ defmodule Recurly.CouponTest do
     discount_in_cents
     discount_percent
     duration
+    id
     invoice_description
     max_redemptions
     max_redemptions_per_account
@@ -35,10 +36,11 @@ defmodule Recurly.CouponTest do
     coupon_code
     coupon_type
     description
-    discount_type
     discount_in_cents
     discount_percent
+    discount_type
     duration
+    id
     invoice_description
     max_redemptions
     max_redemptions_per_account
