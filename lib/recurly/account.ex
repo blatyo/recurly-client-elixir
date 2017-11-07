@@ -5,7 +5,7 @@ defmodule Recurly.Account do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Account,BillingInfo,Address,Transaction,Adjustment,Invoice,Subscription}
+  alias Recurly.{Resource, Account, BillingInfo, Address, Transaction, Adjustment, Invoice, Subscription}
 
   @endpoint "/accounts"
 
@@ -22,6 +22,11 @@ defmodule Recurly.Account do
     field :email,               :string
     field :entity_use_code,     :string
     field :first_name,          :string
+    field :has_active_subscription, :boolean
+    field :has_canceled_subscription, :boolean
+    field :has_future_subscription, :boolean
+    field :has_live_subscription, :boolean
+    field :has_past_due_invoice, :boolean
     field :hosted_login_token,  :string, read_only: true
     field :invoices,            Invoice, list: true, read_only: true
     field :last_name,           :string

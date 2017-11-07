@@ -311,7 +311,7 @@ defmodule Recurly do
   """
 
   @doc false
-  def api_version, do: "2.4"
+  def api_version, do: "2.5"
 
   @doc false
   def client_version do

@@ -7,7 +7,7 @@ defmodule Recurly.Subscription do
   TODO implement postpone and reactivate
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Subscription,Account,SubscriptionAddOn,Plan,Invoice}
+  alias Recurly.{Resource, Subscription, Account, SubscriptionAddOn, Plan, Invoice}
 
   @endpoint "/subscriptions"
 
@@ -18,6 +18,7 @@ defmodule Recurly.Subscription do
     field :bulk,                       :boolean
     field :canceled_at,                :date_time, read_only: true
     field :collection_method,          :string
+    field :converted_at,               :date_time, read_only: true
     field :coupon_code,                :string
     field :customer_notes,             :string
     field :currency,                   :string
@@ -30,6 +31,7 @@ defmodule Recurly.Subscription do
     field :plan_code,                  :string
     field :po_number,                  :string
     field :quantity,                   :integer
+    field :started_with_gift,          :boolean
     field :state,                      :string, read_only: true
     field :subscription_add_ons,       SubscriptionAddOn, list: true
     field :starts_at,                  :date_time

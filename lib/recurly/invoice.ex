@@ -5,13 +5,14 @@ defmodule Recurly.Invoice do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Invoice,Account,Address,Adjustment,Transaction}
+  alias Recurly.{Resource, Invoice, Account, Address, Adjustment, Transaction}
 
   @endpoint "/invoices"
 
   schema :invoice do
     field :account,               Account
     field :address,               Address
+    field :attempt_next_collection_at, :date_time, read_only: true
     field :closed_at,             :date_time, read_only: true
     field :collection_method,     :string
     field :created_at,            :date_time, read_only: true
@@ -22,7 +23,9 @@ defmodule Recurly.Invoice do
     field :line_items,            Adjustment, list: true
     field :net_terms,             :integer
     field :po_number,             :string
+    field :recovery_reason,       :string
     field :state,                 :string
+    field :subtotal_after_discount_in_cents, :integer
     field :subtotal_in_cents,     :integer
     field :tax_in_cents,          :integer
     field :tax_rate,              :float

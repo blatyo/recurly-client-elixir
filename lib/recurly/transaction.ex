@@ -5,7 +5,7 @@ defmodule Recurly.Transaction do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Transaction,TransactionDetails,Account,Invoice,Subscription}
+  alias Recurly.{Resource, Transaction, TransactionDetails, Account, Invoice, Subscription}
 
   @endpoint "/transactions"
 
@@ -13,10 +13,16 @@ defmodule Recurly.Transaction do
     field :account,               Account, read_only: true
     field :action,                :string
     field :amount_in_cents,       :integer
+    field :approval_code,         :string
     field :currency,              :string
+    field :collected_at,          :date_time, read_only: true
+    field :description,           :string
     field :details,               TransactionDetails, read_only: true
+    field :gateway_type,          :string
     field :invoice,               Invoice, read_only: true
     field :ip_address,            :string
+    field :message,               :string
+    field :origin,                :string
     field :original_transaction,  Transaction, read_only: true
     field :payment_method,        :string
     field :recurring_type,        :boolean

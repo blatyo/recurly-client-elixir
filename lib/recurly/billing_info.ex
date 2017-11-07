@@ -32,6 +32,7 @@ defmodule Recurly.BillingInfo do
     field :routing_number,              :string
     field :state,                       :string
     field :token_id,                    :string
+    field :updated_at,                  :date_time, read_only: true
     field :vat_number,                  :string
     field :verification_value,          :string
     field :year,                        :integer

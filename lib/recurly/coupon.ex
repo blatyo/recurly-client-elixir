@@ -5,7 +5,7 @@ defmodule Recurly.Coupon do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Coupon,Money}
+  alias Recurly.{Resource, Coupon, Money}
 
   @endpoint "/coupons"
 
@@ -21,6 +21,7 @@ defmodule Recurly.Coupon do
     field :discount_in_cents,           Money
     field :discount_percent,            :integer
     field :duration,                    :string
+    field :id,                          :integer
     field :invoice_description,         :string
     field :max_redemptions,             :integer
     field :max_redemptions_per_account, :integer

@@ -5,9 +5,10 @@ defmodule Recurly.Adjustment do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Adjustment,Account,Invoice,Subscription}
+  alias Recurly.{Resource, Adjustment, Account, Invoice, Subscription}
 
   @account_endpoint "/accounts/<%= account_code %>/adjustments"
+  @invoice_endpoint "/invoices/<%= invoice_number %>/adjustments"
   @find_endpoint "/adjustments/<%= uuid %>"
 
   schema :adjustment do
@@ -86,6 +87,10 @@ defmodule Recurly.Adjustment do
   def stream(account_code, options \\ []) do
     Resource.stream(Adjustment, account_path(account_code), options)
   end
+  # FIXME: How should this be handled?
+  # def stream(invoice_number, options \\ []) do
+  #   Resource.stream(Adjustment, invoice_path(invoice_number), options)
+  # end
 
   @doc """
   Creates an adjustment from a changeset.
@@ -122,6 +127,10 @@ defmodule Recurly.Adjustment do
   """
   def account_path(account_code) do
     EEx.eval_string(@account_endpoint, account_code: account_code)
+  end
+
+  def invoice_path(invoice_number) do
+    EEx.eval_string(@account_endpoint, invoice_number: invoice_number)
   end
 
   @doc """
