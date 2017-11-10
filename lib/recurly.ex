@@ -315,8 +315,8 @@ defmodule Recurly do
 
   @doc false
   def client_version do
-    {:ok, vsn} = :application.get_key(:recurly, :vsn)
-    List.to_string(vsn)
+    Mix.Project.config()
+    |> Keyword.get(:version)
   end
 
   @doc false
