@@ -337,6 +337,17 @@ defmodule Recurly.Resource do
     end
   end
 
+  def delete(resource, path \\ nil) do
+    path = path || location(resource)
+
+    case API.make_request(:delete, path) do
+      {:ok, _body, _headers} ->
+        {:ok, resource}
+      err ->
+        err
+    end
+  end
+
   @doc """
   Gives us the attributes of a resource without all the metadata.
 

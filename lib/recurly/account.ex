@@ -202,6 +202,10 @@ defmodule Recurly.Account do
     Resource.update(account, changeset)
   end
 
+  def close(account = %Account{}) do
+    Resource.delete(account)
+  end
+
   @doc """
   Generates the path to an account given the account code
 
