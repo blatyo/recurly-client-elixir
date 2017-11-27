@@ -206,6 +206,10 @@ defmodule Recurly.Account do
     Resource.delete(account)
   end
 
+  def reopen(account = %Account{}) do
+    Resource.action(account, :reopen)
+  end
+
   @doc """
   Generates the path to an account given the account code
 
