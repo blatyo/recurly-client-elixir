@@ -207,7 +207,7 @@ defmodule Recurly.Account do
   end
 
   def reopen(account = %Account{}) do
-    Resource.action(account, :reopen)
+    Resource.perform_action(account, :reopen)
   end
 
   @doc """
