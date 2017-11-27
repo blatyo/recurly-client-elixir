@@ -7,6 +7,8 @@ defmodule Recurly.BillingInfo do
   use Recurly.Resource
   alias Recurly.Account
 
+  @billing_info_endpoint "/accounts/<%= account_code %>/billing_info"
+
   schema :billing_info do
     field :account,                     Account, read_only: true
     field :account_number,              :string
@@ -36,5 +38,17 @@ defmodule Recurly.BillingInfo do
     field :verification_value,          :string
     field :year,                        :integer
     field :zip,                         :string
+  end
+
+  def create(account_code, changeset) do
+    Recurly.Resource.create(%__MODULE__{}, changeset, billing_info_path(account_code))
+  end
+
+  def update(account_code, changeset) do
+    Recurly.Resource.update(%__MODULE__{}, changeset, billing_info_path(account_code))
+  end
+
+  def billing_info_path(account_code) do
+    EEx.eval_string(@billing_info_endpoint, account_code: account_code)
   end
 end

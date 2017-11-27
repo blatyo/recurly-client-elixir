@@ -5,7 +5,7 @@ defmodule Recurly.API do
   require Logger
 
   alias HTTPoison.Response
-  alias Recurly.{APILogger,XML,ValidationError,NotFoundError}
+  alias Recurly.{APILogger, XML, ValidationError, NotFoundError}
 
   @doc """
 

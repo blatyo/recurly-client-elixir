@@ -7,7 +7,7 @@ defmodule Recurly.Subscription do
   TODO implement postpone and reactivate
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Subscription,Account,SubscriptionAddOn,Plan,Invoice}
+  alias Recurly.{Resource, Subscription, Account, SubscriptionAddOn, Plan, Invoice}
 
   @endpoint "/subscriptions"
 
@@ -205,6 +205,11 @@ defmodule Recurly.Subscription do
   """
   def create(changeset) do
     Resource.create(%Subscription{}, changeset, @endpoint)
+  end
+
+
+  def update(subscription = %Subscription{}, changeset) do
+    Resource.update(subscription, changeset, path(subscription.uuid))
   end
 
   @doc """

@@ -5,7 +5,7 @@ defmodule Recurly.Account do
   for more details
   """
   use Recurly.Resource
-  alias Recurly.{Resource,Account,BillingInfo,Address,Transaction,Adjustment,Invoice,Subscription}
+  alias Recurly.{Resource, Account, BillingInfo, Address, Transaction, Adjustment, Invoice, Subscription}
 
   @endpoint "/accounts"
 
