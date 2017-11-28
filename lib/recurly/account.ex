@@ -205,6 +205,9 @@ defmodule Recurly.Account do
   def close(account = %Account{}) do
     Resource.delete(account)
   end
+  def close(account_code) do
+    Resource.delete(%Account{}, path(account_code))
+  end
 
   def reopen(account = %Account{}) do
     Resource.perform_action(account, :reopen)
