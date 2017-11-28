@@ -26,7 +26,7 @@ defmodule Recurly.API do
 
     HTTPoison.request(method, endpoint, body, headers, options)
     |> decompress
-    |> APILogger.log_response
+    |> APILogger.log_response(method, endpoint)
     |> handle_response
   end
 
