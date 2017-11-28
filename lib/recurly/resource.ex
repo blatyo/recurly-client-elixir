@@ -341,6 +341,8 @@ defmodule Recurly.Resource do
     path = path || location(resource)
 
     case API.make_request(:delete, path) do
+      {:ok, "", _headers} ->
+        :ok
       {:ok, xml_string, _headers} ->
         {:ok, XML.Parser.parse(resource, xml_string, false)}
       err ->
